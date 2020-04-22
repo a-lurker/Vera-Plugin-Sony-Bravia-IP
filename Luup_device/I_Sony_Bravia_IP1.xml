@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<implementation>
+  <files>L_Sony_Bravia_IP1.lua</files>
+  <startup>luaStartUp</startup>
+
+  <actionList>
+
+    <action>
+      <serviceId>urn:a-lurker-com:serviceId:Sony_Bravia_IP1</serviceId>
+      <name>ExecuteMethod</name>
+      <run>
+        executeMethod(lul_settings.Method,lul_settings.Json,lul_settings.Service)
+      </run>
+    </action>
+
+    <action>
+      <serviceId>urn:a-lurker-com:serviceId:Sony_Bravia_IP1</serviceId>
+      <name>SendRemoteCode</name>
+      <run>
+        sendRemoteCode(lul_settings.RemoteCode)
+      </run>
+    </action>
+
+    <action>
+      <serviceId>urn:a-lurker-com:serviceId:Sony_Bravia_IP1</serviceId>
+      <name>SendWOL</name>
+      <run>
+        sendWOL()
+      </run>
+    </action>
+
+    <action>
+      <serviceId>urn:a-lurker-com:serviceId:Sony_Bravia_IP1</serviceId>
+      <name>SetActiveApp</name>
+      <run>
+        setActiveApp(lul_settings.Uri)
+      </run>
+    </action>
+
+    <action>
+      <serviceId>urn:a-lurker-com:serviceId:Sony_Bravia_IP1</serviceId>
+      <name>SetMute</name>
+      <run>
+        setMute(lul_settings.Mute)
+      </run>
+    </action>
+
+    <action>
+      <serviceId>urn:a-lurker-com:serviceId:Sony_Bravia_IP1</serviceId>
+      <name>SetPlayContent</name>
+      <run>
+        setPlayContent(lul_settings.Uri)
+      </run>
+    </action>
+
+    <action>
+      <serviceId>urn:a-lurker-com:serviceId:Sony_Bravia_IP1</serviceId>
+      <name>SetPower</name>
+      <run>
+        setPower(lul_settings.Power)
+      </run>
+    </action>
+
+    <action>
+      <serviceId>urn:a-lurker-com:serviceId:Sony_Bravia_IP1</serviceId>
+      <name>SetTextForm</name>
+      <run>
+        setInput(lul_settings.Text)
+      </run>
+    </action>
+
+    <action>
+      <serviceId>urn:a-lurker-com:serviceId:Sony_Bravia_IP1</serviceId>
+      <name>SetVolume</name>
+      <run>
+        setVolume(lul_settings.Volume)
+      </run>
+    </action>
+
+    <action>
+      <serviceId>urn:a-lurker-com:serviceId:Sony_Bravia_IP1</serviceId>
+      <name>SetVolumeUpDown</name>
+      <run>
+        setVolumeUpDown(lul_settings.Step)
+      </run>
+    </action>
+
+    <action>
+      <serviceId>urn:a-lurker-com:serviceId:Sony_Bravia_IP1</serviceId>
+      <name>TerminateApps</name>
+      <run>
+        terminateApps()
+      </run>
+    </action>
+
+  </actionList>
+</implementation>

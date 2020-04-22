@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<scpd xmlns="urn:schemas-upnp-org:service-1-0">
+
+<specVersion>
+  <major>1</major>
+  <minor>0</minor>
+</specVersion>
+
+<serviceStateTable>
+
+  <stateVariable sendEvents="no">
+  <name>A_ARG_TYPE_Method</name>
+  <shortCode>function</shortCode>
+  <dataType>string</dataType>
+  </stateVariable>
+
+  <stateVariable sendEvents="no">
+  <name>A_ARG_TYPE_Json</name>
+  <shortCode>json</shortCode>
+  <dataType>string</dataType>
+  </stateVariable>
+
+  <stateVariable sendEvents="no">
+  <name>A_ARG_TYPE_Service</name>
+  <shortCode>service</shortCode>
+  <dataType>string</dataType>
+  </stateVariable>
+
+  <stateVariable sendEvents="no">
+  <name>A_ARG_TYPE_RemoteCode</name>
+  <shortCode>remoteCode</shortCode>
+  <dataType>string</dataType>
+  </stateVariable>
+
+  <stateVariable sendEvents="no">
+  <name>A_ARG_TYPE_Uri</name>
+  <shortCode>uri</shortCode>
+  <dataType>string</dataType>
+  </stateVariable>
+
+  <stateVariable sendEvents="no">
+  <name>A_ARG_TYPE_Mute</name>
+  <shortCode>mute</shortCode>
+  <dataType>string</dataType>
+  </stateVariable>
+
+  <stateVariable sendEvents="no">
+  <name>A_ARG_TYPE_Power</name>
+  <shortCode>power</shortCode>
+  <dataType>string</dataType>
+  </stateVariable>
+
+  <stateVariable sendEvents="no">
+  <name>A_ARG_TYPE_Text</name>
+  <shortCode>text</shortCode>
+  <dataType>string</dataType>
+  </stateVariable>
+
+  <stateVariable sendEvents="no">
+  <name>A_ARG_TYPE_Volume</name>
+  <shortCode>volume</shortCode>
+  <dataType>string</dataType>
+  </stateVariable>
+
+  <stateVariable sendEvents="no">
+  <name>A_ARG_TYPE_Step</name>
+  <shortCode>step</shortCode>
+  <dataType>string</dataType>
+  </stateVariable>
+
+</serviceStateTable>
+
+<actionList>
+
+  <action>
+     <name>ExecuteMethod</name>
+     <argumentList>
+        <argument>
+           <name>Function</name>
+           <direction>in</direction>
+           <relatedStateVariable>A_ARG_TYPE_Method</relatedStateVariable>
+        </argument>
+        <argument>
+           <name>Json</name>
+           <direction>in</direction>
+           <relatedStateVariable>A_ARG_TYPE_Json</relatedStateVariable>
+        </argument>
+        <argument>
+           <name>Service</name>
+           <direction>in</direction>
+           <relatedStateVariable>A_ARG_TYPE_Service</relatedStateVariable>
+        </argument>
+     </argumentList>
+  </action>
+
+  <action>
+     <name>SendRemoteCode</name>
+     <argumentList>
+        <argument>
+           <name>RemoteCode</name>
+           <direction>in</direction>
+           <relatedStateVariable>A_ARG_TYPE_RemoteCode</relatedStateVariable>
+        </argument>
+     </argumentList>
+  </action>
+
+  <action>
+     <name>SendWOL</name>
+     <argumentList>
+     </argumentList>
+  </action>
+
+  <action>
+     <name>SetActiveApp</name>
+     <argumentList>
+        <argument>
+           <name>Uri</name>
+           <direction>in</direction>
+           <relatedStateVariable>A_ARG_TYPE_Uri</relatedStateVariable>
+        </argument>
+     </argumentList>
+  </action>
+
+  <action>
+     <name>SetMute</name>
+     <argumentList>
+        <argument>
+           <name>Mute</name>
+           <direction>in</direction>
+           <relatedStateVariable>A_ARG_TYPE_Mute</relatedStateVariable>
+        </argument>
+     </argumentList>
+  </action>
+
+  <action>
+     <name>SetPlayControl</name>
+     <argumentList>
+        <argument>
+           <name>Uri</name>
+           <direction>in</direction>
+           <relatedStateVariable>A_ARG_TYPE_Uri</relatedStateVariable>
+        </argument>
+     </argumentList>
+  </action>
+
+  <action>
+     <name>SetPower</name>
+     <argumentList>
+        <argument>
+           <name>Power</name>
+           <direction>in</direction>
+           <relatedStateVariable>A_ARG_TYPE_Power</relatedStateVariable>
+        </argument>
+     </argumentList>
+  </action>
+
+  <action>
+     <name>SetTextForm</name>
+     <argumentList>
+        <argument>
+           <name>Text</name>
+           <direction>in</direction>
+           <relatedStateVariable>A_ARG_TYPE_Text</relatedStateVariable>
+        </argument>
+     </argumentList>
+  </action>
+
+  <action>
+     <name>SetVolume</name>
+     <argumentList>
+        <argument>
+           <name>Volume</name>
+           <direction>in</direction>
+           <relatedStateVariable>A_ARG_TYPE_Volume</relatedStateVariable>
+        </argument>
+     </argumentList>
+  </action>
+
+  <action>
+     <name>SetVolumeUpDown</name>
+     <argumentList>
+        <argument>
+           <name>Step</name>
+           <direction>in</direction>
+           <relatedStateVariable>A_ARG_TYPE_Step</relatedStateVariable>
+        </argument>
+     </argumentList>
+  </action>
+
+  <action>
+     <name>TerminateApps</name>
+     <argumentList>
+     </argumentList>
+  </action>
+
+</actionList>
+
+</scpd>

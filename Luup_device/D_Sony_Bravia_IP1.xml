@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns="urn:schemas-upnp-org:device-1-0">
+   <specVersion>
+      <major>1</major>
+      <minor>0</minor>
+   </specVersion>
+   <device>
+      <deviceType>urn:schemas-a-lurker-com:device:Sony_Bravia_IP:1</deviceType>
+      <friendlyName>Sony Bravia</friendlyName>
+      <manufacturer>A Lurker</manufacturer>
+      <staticJson>D_Sony_Bravia_IP1.json</staticJson>
+      <serviceList>
+         <service>
+            <serviceType>urn:schemas-a-lurker-com:service:Sony_Bravia_IP:1</serviceType>
+            <serviceId>urn:a-lurker-com:serviceId:Sony_Bravia_IP1</serviceId>
+            <SCPDURL>S_Sony_Bravia_IP1.xml</SCPDURL>
+         </service>
+      </serviceList>
+      <implementationList>
+         <implementationFile>I_Sony_Bravia_IP1.xml</implementationFile>
+      </implementationList>
+   </device>
+</root>
