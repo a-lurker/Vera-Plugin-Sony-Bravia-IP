@@ -65,7 +65,7 @@
       <serviceId>urn:a-lurker-com:serviceId:Sony_Bravia_IP1</serviceId>
       <name>SetTextForm</name>
       <run>
-        setInput(lul_settings.Text)
+        setTextForm(lul_settings.Text)
       </run>
     </action>
 

@@ -56,7 +56,7 @@
 
 local PLUGIN_NAME     = 'Sony_Bravia_IP'
 local PLUGIN_SID      = 'urn:a-lurker-com:serviceId:'..PLUGIN_NAME..'1'
-local PLUGIN_VERSION  = '0.51'
+local PLUGIN_VERSION  = '0.52'
 local THIS_LUL_DEVICE = nil
 
 local PLUGIN_URL_ID   = 'al_sony_bravia_info'
@@ -150,13 +150,16 @@ local function updateVariable(varK, varV, sid, id)
     if (sid == nil) then sid = PLUGIN_SID      end
     if (id  == nil) then  id = THIS_LUL_DEVICE end
 
-    if ((varK == nil) or (varV == nil)) then
-        luup.log(PLUGIN_NAME..' debug: '..'Error: updateVariable was supplied with a nil value', 1)
+    if (varV == nil) then
+        if (varK == nil) then
+            luup.log(PLUGIN_NAME..' debug: '..'Error: updateVariable was supplied with nil values', 1)
+        else
+            luup.log(PLUGIN_NAME..' debug: '..'Error: updateVariable '..tostring(varK)..' was supplied with a nil value', 1)
+        end
         return
     end
 
     local newValue = tostring(varV)
-    --debug(varK..' = '..newValue)
     debug(newValue..' --> '..varK)
 
     local currentValue = luup.variable_get(sid, varK, id)
@@ -175,7 +178,9 @@ local function loadJsonModule()
         'json-dm2',             -- dataMine plugin
         'dropbox_json_parser',  -- dropbox plugin
         'hue_json',             -- hue plugin
-        'L_ALTUIjson'           -- AltUI plugin
+        'L_ALTUIjson',          -- AltUI plugin
+        'cjson',                -- openLuup?
+        'rapidjson'             -- how many json libs are there?
     }
 
     local ptr  = nil
@@ -241,7 +246,7 @@ function ajaxRequest(url, args, onSuccess, onError) {
                 onSuccess(this);
             }
         }
-   }
+   };
 
    // use GET and asynchronous operation
    httpRequest.open("GET", url, true);
@@ -799,7 +804,7 @@ end
 -- A service in the implementation file
 -- Execution a TV function as requested by the user. The
 -- user has to examine the log file to see what happened.
-local function ExecuteMethod(theMethod, theJson, theService)
+local function executeMethod(theMethod, theJson, theService)
     -- execute any function specified by the user
     local success, jsonObj, strTab = sendToAPI(theMethod, theJson, theService)
 end
